@@ -1,3 +1,7 @@
+// ===============
+// VIEL FRAME
+// ===============
+
 (function() {
   'use strict';
 
@@ -12,9 +16,12 @@
       if (callback) callback();
       return;
     }
-    var script = document.createElement('script');
+    const script = document.createElement('script');
     script.src = src;
-    script.onload = callback || null;
+    script.onload = callback;
+    script.onerror = function() {
+      console.error(`Failed to load script: ${src}`);
+    };
     document.head.appendChild(script);
   }
 
@@ -30,14 +37,11 @@
         Prism.plugins.autoloader.languages_path =
           'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/';
       }
-      // 高亮所有代码块
-      if (typeof Prism !== 'undefined') {
-        Prism.highlightAll();
-      }
+      Prism.highlightAll();
     });
   });
 
-  // ========== 暴露 API ==========
+  // ========== API ==========
   window.Viel = {
     injectJS: injectJS,
     highlightAll: function() {
@@ -45,5 +49,5 @@
     }
   };
 
-  console.log('VIEL FRAME (ALSO PRISM AUTOLOADER)');
+  console.log('VIEL FRAME');
 })();

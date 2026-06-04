@@ -6,28 +6,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap');
 
 :root {
+  /* 背景 */
   --bg-primary: #0b0b0f;
   --bg-secondary: #15151c;
   --bg-surface: #1e1e28;
   --bg-elevated: #282836;
+  --bg-code: #0d0d14;
+
+  /* 文字 */
   --text-primary: #f0f0f5;
   --text-secondary: #b0b0c0;
   --text-muted: #6b6b7d;
+  --text-heading: #ffffff;
+  --text-code: #c4b5fd;
+  --text-code-block: #e0d6ff;
+  --text-link-hover: #a78bfa;
+
+  /* 强调色 */
   --accent: #8b5cf6;
   --accent-soft: rgba(139, 92, 246, 0.15);
   --accent-glow: rgba(139, 92, 246, 0.5);
+  --accent-hover: #9d74f7;
+
+  /* 边框 */
   --border: #2a2a3a;
   --border-light: #3a3a4a;
+
+  /* 状态色 */
   --danger: #f87171;
   --success: #4ade80;
   --warning: #fbbf24;
+
+  /* 阴影 */
+  --shadow-sharp: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-table: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-button: 0 4px 10px rgba(139, 92, 246, 0.3);
+  --shadow-button-hover: 0 6px 16px rgba(139, 92, 246, 0.5);
+  --shadow-button-active: 0 2px 6px rgba(139, 92, 246, 0.4);
+  --shadow-inset-input: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-inset-input-focus: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-inset-pre: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+  --shadow-inset-checkbox: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+
+  /* 其他 */
   --radius-sm: 2px;
   --radius-md: 4px;
   --radius-lg: 6px;
   --font-mono: 'JetBrains Mono', 'Consolas', monospace;
   --font-sans: 'Noto Sans SC', sans-serif;
-  --shadow-sharp: 0 4px 12px rgba(0, 0, 0, 0.5);
   --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --table-row-hover: rgba(139, 92, 246, 0.05);
+  --button-reset-bg-hover: var(--bg-elevated);
+}
+
+/* 浅色模式 */
+[data-theme="light"] {
+  --bg-primary: #f5f5f7;
+  --bg-secondary: #ffffff;
+  --bg-surface: #f0f0f5;
+  --bg-elevated: #eaeaef;
+  --bg-code: #f7f7f9;
+
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a5e;
+  --text-muted: #8a8a9e;
+  --text-heading: #0a0a1a;
+  --text-code: #6b21a8;
+  --text-code-block: #3b0764;
+  --text-link-hover: #7c3aed;
+
+  --accent: #7c3aed;
+  --accent-soft: rgba(124, 58, 237, 0.15);
+  --accent-glow: rgba(124, 58, 237, 0.4);
+  --accent-hover: #6d28d9;
+
+  --border: #d4d4e0;
+  --border-light: #c4c4d4;
+
+  --shadow-sharp: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-table: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-button: 0 4px 10px rgba(124, 58, 237, 0.25);
+  --shadow-button-hover: 0 6px 16px rgba(124, 58, 237, 0.4);
+  --shadow-button-active: 0 2px 6px rgba(124, 58, 237, 0.35);
+  --shadow-inset-input: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-inset-input-focus: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  --shadow-inset-pre: inset 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-inset-checkbox: inset 0 1px 3px rgba(0, 0, 0, 0.15);
+
+  --table-row-hover: rgba(124, 58, 237, 0.05);
+  --button-reset-bg-hover: var(--bg-elevated);
 }
 
 * {
@@ -84,7 +151,7 @@ h1, h2, h3, h4, h5, h6 {
   width: fit-content;
 }
 
-h1 { font-size: 2.5rem; letter-spacing: -0.03em; color: #ffffff; }
+h1 { font-size: 2.5rem; letter-spacing: -0.03em; color: var(--text-heading); }
 h2 { font-size: 1.9rem; }
 h3 { font-size: 1.6rem; }
 h4 { font-size: 1.3rem; }
@@ -107,12 +174,12 @@ a {
 }
 a:hover {
   border-bottom-color: var(--accent);
-  color: #a78bfa;
+  color: var(--text-link-hover);
   text-shadow: 0 0 8px var(--accent-glow);
 }
 
 strong, b {
-  color: #ffffff;
+  color: var(--text-heading);
   font-weight: 600;
 }
 
@@ -162,7 +229,7 @@ table {
   background: var(--bg-surface);
   border-radius: var(--radius-md);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  box-shadow: var(--shadow-table);
 }
 th, td {
   padding: 0.9rem 1.2rem;
@@ -171,7 +238,7 @@ th, td {
 }
 th {
   background: var(--bg-elevated);
-  color: #ffffff;
+  color: var(--text-heading);
   font-weight: 600;
   font-size: 0.9rem;
   text-transform: uppercase;
@@ -184,7 +251,7 @@ tr:last-child td {
   border-bottom: none;
 }
 tr:hover td {
-  background: rgba(139, 92, 246, 0.05);
+  background: var(--table-row-hover);
 }
 
 input:not([type="checkbox"]):not([type="radio"]),
@@ -200,7 +267,7 @@ select {
   width: 100%;
   transition: var(--transition);
   outline: none;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+  box-shadow: var(--shadow-inset-input);
   margin: 0.5rem 0 1.2rem;
   display: block;
 }
@@ -209,7 +276,7 @@ input:focus,
 textarea:focus,
 select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft), inset 0 1px 2px rgba(0,0,0,0.4);
+  box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-inset-input-focus);
 }
 
 textarea {
@@ -231,7 +298,6 @@ label {
   margin-bottom: 0.2rem;
 }
 
-/* ----- 按钮：锐利边缘，紫色强调 ----- */
 button,
 input[type="button"],
 input[type="submit"],
@@ -246,7 +312,7 @@ input[type="reset"] {
   cursor: pointer;
   transition: var(--transition);
   letter-spacing: 0.02em;
-  box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+  box-shadow: var(--shadow-button);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -259,14 +325,14 @@ button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
-  background: #9d74f7;
-  box-shadow: 0 6px 16px rgba(139, 92, 246, 0.5);
+  background: var(--accent-hover);
+  box-shadow: var(--shadow-button-hover);
   transform: translateY(-1px);
 }
 
 button:active {
   transform: translateY(1px);
-  box-shadow: 0 2px 6px rgba(139, 92, 246, 0.4);
+  box-shadow: var(--shadow-button-active);
 }
 
 button[type="reset"],
@@ -277,12 +343,11 @@ input[type="reset"] {
   box-shadow: none;
 }
 button[type="reset"]:hover {
-  background: var(--bg-elevated);
+  background: var(--button-reset-bg-hover);
   border-color: var(--accent);
   color: white;
 }
 
-/* ----- 选择按钮 ----- */
 input[type="checkbox"],
 input[type="radio"] {
   appearance: none;
@@ -298,11 +363,18 @@ input[type="radio"] {
   cursor: pointer;
   transition: var(--transition);
   outline: none;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+  box-shadow: var(--shadow-inset-checkbox);
 }
 
 input[type="radio"] {
   border-radius: 50%;
+}
+
+input[type="checkbox"]:hover,
+input[type="radio"]:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft), var(--shadow-inset-checkbox);
+  transform: scale(1.1);
 }
 
 input[type="checkbox"]:checked,
@@ -310,6 +382,13 @@ input[type="radio"]:checked {
   background: var(--accent);
   border-color: var(--accent);
   box-shadow: 0 0 8px var(--accent-glow);
+  transform: scale(1);
+}
+
+input[type="checkbox"]:checked:hover,
+input[type="radio"]:checked:hover {
+  box-shadow: 0 0 12px var(--accent-glow), var(--shadow-inset-checkbox);
+  transform: scale(1.05);
 }
 
 input[type="checkbox"]:checked::after {
@@ -320,7 +399,12 @@ input[type="checkbox"]:checked::after {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: var(--transition);
+}
+
+input[type="checkbox"]:checked::after {
+  transform: translate(-50%, -50%) scale(1);
 }
 
 input[type="radio"]:checked::after {
@@ -332,10 +416,14 @@ input[type="radio"]:checked::after {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
+  transition: var(--transition);
 }
 
-/* 关联label的交互 */
+input[type="radio"]:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
 label:has(input[type="checkbox"]),
 label:has(input[type="radio"]) {
   display: inline-flex;
@@ -345,25 +433,24 @@ label:has(input[type="radio"]) {
   color: var(--text-secondary);
 }
 
-/* ----- 代码块 & 行内代码 (适配Prism.js) ----- */
 code {
   font-family: var(--font-mono);
   background: var(--bg-elevated);
   padding: 0.2rem 0.5rem;
   border-radius: 2px;
   font-size: 0.9rem;
-  color: #c4b5fd;
+  color: var(--text-code);
   border: 1px solid var(--border);
 }
 
 pre {
-  background: #0d0d14;
+  background: var(--bg-code);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   padding: 1.2rem 1.5rem;
   overflow-x: auto;
   margin: 1.8rem 0;
-  box-shadow: inset 0 2px 8px rgba(0,0,0,0.6);
+  box-shadow: var(--shadow-inset-pre);
   position: relative;
 }
 
@@ -371,19 +458,17 @@ pre code {
   background: transparent;
   padding: 0;
   border: none;
-  color: #e0d6ff;
+  color: var(--text-code-block);
   font-size: 0.9rem;
   line-height: 1.6;
   display: block;
 }
 
-/* 若使用Prism.js，覆盖其背景以融合框架 */
 pre[class*="language-"] {
-  background: #0d0d14;
+  background: var(--bg-code);
   border: 1px solid var(--border);
 }
 
-/* ----- 其他细节：字段集、图例等 ----- */
 fieldset {
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -399,14 +484,12 @@ legend {
   font-size: 1rem;
 }
 
-/* 图片适配 */
 img {
   max-width: 100%;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
 }
 
-/* 自定义滚动条 */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
