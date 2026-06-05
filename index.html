@@ -9,24 +9,51 @@
 <body>
   <main>
     <h1>VIEL FRAME</h1>
-    <p><strong>Viel Frame</strong> ("Viel" is a german word, means "a lot," you should pronounce it "vee-oh",) is a classless drop-in CSS style set. It makes plain HTML looks kinda cool<small> and AI-ish……?</small></p>
+    <p><strong>Viel Frame</strong> is a <strong>drop-in CSS style set</strong> for plain HTML. No classes, no setup — just add one line and instantly make it look modern and cool<small> (and AI-ish……?)</small></p>
+    <p>For full documentation, visit <a href="https://github.com/del-stu/viel-frame">GitHub</a>.</p>
+    <button onclick="Viel.theme('toggle');">Toggle Theme</button>
 
-    <h2>How to use?</h2>
-    <pre><code class="language-html">&lt;head&gt;
-  &lt;script type="module" src="https://cdn.jsdelivr.net/npm/viel-frame@1.1.0/dist/index.js"&gt;&lt;/script&gt;
-  &lt;!--Alternatively, if you want the latest version, use this--&gt;
+    <h2>Quick Start</h2>
+    <p>Add this to your <code>&lt;head&gt;</code>:</p>
+    <pre><code class="language-html">&lt;script type="module" src="https://cdn.jsdelivr.net/npm/viel-frame@1.1.0/dist/index.js"&gt;&lt;/script&gt;</code></pre>
+    <p>Or use the latest version (use if you know what you're doing):</p>
+    <pre><code class="language-html">&lt;script type="module" src="https://cdn.jsdelivr.net/npm/viel-frame/dist/index.js"&gt;&lt;/script&gt;</code></pre>
+    <p>That's it. Write plain HTML and Viel Frame handles the rest.</p>
+
+    <h2>For Local Use</h2>
+    <p>Type</p>
+    <pre><code class="language-bash">npm install viel-frame</code></pre>
+    <p>in your project directory.</p>
+
+    <h2>Why Viel Frame?</h2>
+    <ul>
+      <li><strong>Dark, high-contrast UI</strong> — deep blacks, purple accents, sharp edges</li>
+      <li><strong>Zero classes required</strong> — styles apply directly to standard HTML tags</li>
+      <li><strong>Built-in code highlighting</strong> — with Prism.js, automatically highlights <code>&lt;pre&gt;&lt;code&gt;</code> blocks</li>
+      <li><strong>Responsive &amp; readable</strong> — optimized typography, spacing, and mobile layout</li>
+      <li><strong>Smooth interactions</strong> — focus rings, hover glows, and subtle transitions</li>
+    </ul>
+
+    <h2>Example</h2>
+    <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;My Page&lt;/title&gt;
   &lt;script type="module" src="https://cdn.jsdelivr.net/npm/viel-frame/dist/index.js"&gt;&lt;/script&gt;
-  &lt;!--Generally not recommended, use if you know what are you doing.--&gt;
-  &lt;!--If you only need the CSS, use this link--&gt;
-  &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/viel-frame@1.1.0/dist/style.css"&gt;
 &lt;/head&gt;
-&lt;!--DONE--&gt;</code></pre>
-    <h2>DEMO</h2>
+&lt;body&gt;&lt;main&gt;
+  &lt;h1&gt;Hello Viel&lt;/h1&gt;
+  &lt;p&gt;This paragraph, heading, and container are styled automatically.&lt;/p&gt;
+  &lt;button&gt;Click me&lt;/button&gt;
+&lt;/main&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
+
+    <h2>Demo</h2>
     <p>You can use <a href="https://youtu.be/dQw4w9WgXcQ">hyperlinks</a>, <strong>BOLD</strong>, <em>italics</em> and <small>small font</small> like this.</p>
     <blockquote>This is a quote block with a purple border on the left.</blockquote>
-    
+
     <hr>
-    
+
     <h3>Lists</h3>
     <ul>
       <li>Unordered List</li>
@@ -58,10 +85,10 @@
     <h3>Interactives</h3>
     <label for="demo-input">INPUT</label>
     <input type="text" id="demo-input" placeholder="no-reply@examples.com">
-    
+
     <label for="demo-textarea">TEXTAREA</label>
     <textarea id="demo-textarea" placeholder="This is a textarea"></textarea>
-    
+
     <div>
       <label>
         <input type="checkbox" checked> I have read the terms and conditions
@@ -70,7 +97,7 @@
         <input type="checkbox"> Subscribe to notifications
       </label>
     </div>
-    
+
     <div style="margin:1rem 0;">
       <label>
         <input type="radio" name="option" value="a" checked> Red
@@ -106,12 +133,11 @@ greet('VIEL');</code></pre>
         <option>OPTION6</option>
       </select>
     </fieldset>
-    
+
     <p><small>
       Copyright (c) 2026 InfDEL Lab, ChakerAt<br>
       DEL THE WORLD.<br>
-      The name "Viel" is not intended to imitate "Vite", nor is it related to Vite. Coincidence.<br>
-      I know "means 'a lot'" is a bad joke, please don't shoot me.
+      The name "Viel" is not intended to imitate "Vite", nor is it related to Vite. Coincidence.
     </small></p>
   </main>
 </body>

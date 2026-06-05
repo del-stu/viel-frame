@@ -14,13 +14,14 @@
   --bg-code: #0d0d14;
 
   /* 文字 */
-  --text-primary: #f0f0f5;
-  --text-secondary: #b0b0c0;
+  --text-primary: #ffffff;
+  --text-secondary: #b5b8c6;
+  --text-secondary-2: #c5c5d5;
   --text-muted: #6b6b7d;
   --text-heading: #ffffff;
-  --text-code: #c4b5fd;
-  --text-code-block: #e0d6ff;
-  --text-link-hover: #a78bfa;
+  --text-code: #ddd6fe;
+  --text-code-block: #f5f3ff;
+  --text-link-hover: #c4b5fd;
 
   /* 强调色 */
   --accent: #8b5cf6;
@@ -33,9 +34,9 @@
   --border-light: #3a3a4a;
 
   /* 状态色 */
-  --danger: #f87171;
-  --success: #4ade80;
-  --warning: #fbbf24;
+  --danger: #fca5a5;
+  --success: #86efac;
+  --warning: #fde047;
 
   /* 阴影 */
   --shadow-sharp: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -69,16 +70,16 @@
 
   --text-primary: #1a1a2e;
   --text-secondary: #4a4a5e;
-  --text-muted: #8a8a9e;
+  --text-muted: #6b6b7d;
   --text-heading: #0a0a1a;
-  --text-code: #6b21a8;
+  --text-code: #5b21b6;
   --text-code-block: #3b0764;
-  --text-link-hover: #7c3aed;
+  --text-link-hover: #6d28d9;
 
-  --accent: #7c3aed;
-  --accent-soft: rgba(124, 58, 237, 0.15);
-  --accent-glow: rgba(124, 58, 237, 0.4);
-  --accent-hover: #6d28d9;
+  --accent: #6d28d9;
+  --accent-soft: rgba(109, 40, 217, 0.15);
+  --accent-glow: rgba(109, 40, 217, 0.4);
+  --accent-hover: #5b21b6;
 
   --border: #d4d4e0;
   --border-light: #c4c4d4;
@@ -505,7 +506,6 @@ img {
   background: var(--accent);
 }
 
-/* 选中文本颜色 */
 ::selection {
   background: var(--accent);
   color: white;

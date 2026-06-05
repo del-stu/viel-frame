@@ -11,32 +11,6 @@
   link_css.href = basePath + 'style.css';
   document.head.appendChild(link_css);
 
-  // 自动检测系统主题并应用
-  function applyTheme(theme) {
-    if (theme === 'light') {
-      document.documentElement.setAttribute('data-theme', 'light');
-    } else if (theme === 'dark') {
-      document.documentElement.removeAttribute('data-theme');
-    } else {
-      // auto: 跟随系统
-      const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-      if (prefersLight) {
-        document.documentElement.setAttribute('data-theme', 'light');
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-      }
-    }
-  }
-
-  applyTheme('auto');
-
-  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function(e) {
-    const current = document.documentElement.getAttribute('data-theme');
-    if (current !== 'light' && current !== 'dark') {
-      applyTheme('auto');
-    }
-  });
-
   function injectJS(src, callback) {
     if (document.querySelector(`script[src="${src}"]`)) {
       if (callback) callback();
@@ -72,17 +46,6 @@
     injectJS: injectJS,
     highlightAll: function() {
       if (typeof Prism !== 'undefined') Prism.highlightAll();
-    },
-    theme: function(mode) {
-      if (mode === undefined) {
-        return document.documentElement.getAttribute('data-theme') || 'dark';
-      }
-      if (mode === 'toggle') {
-        var current = document.documentElement.getAttribute('data-theme');
-        applyTheme(current === 'light' ? 'dark' : 'light');
-        return;
-      }
-      applyTheme(mode);
     }
   };
 
