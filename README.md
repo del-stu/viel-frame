@@ -4,7 +4,7 @@
 
 **Viel Frame** (pronounced "vee-oh" ) is a **drop-in CSS style set** for plain HTML. No classes, no setup — just add one line and instantly make it look modern and cool (and AI-ish……?)
 
-> !NOTE
+> [!NOTE]
 > Viel Frame's README, website, and some part of the script are AI-assisted.
 > GenAI is used for prototyping, optimization, etc.
 > Be careful when contributing.
@@ -27,14 +27,14 @@ Or use the latest version (use if you know what you're doing):
 
 That's it. Write plain HTML and Viel Frame handles the rest.
 
-> !WARNING
+> [!WARNING]
 > If you're new to web development, and you don't know this: **DO NOT just click open the HTML file**, as that won't load JavaScript modules.
 
 You need to open a local server, for example, using `python -m http.server 8000` command and then open `http://localhost:8000` in your browser.
 
 And if you're editing the script or CSS, don't use things like Vite's server, they have aggressive caching mechanism that will prevent you from seeing the changes.
 
-> ***
+***
 
 ### NPM Install
 
